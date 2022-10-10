@@ -1,0 +1,13 @@
+- name: Join windows host to Domain Controller
+  win_domain_membership:
+    dns_domain_name: "{{ dns_domain_name }}"
+    hostname: "{{ computer_name }}"
+    domain_admin_user: "{{ domain_admin_user }}"
+    domain_admin_password: "{{ domain_pass }}"
+    state: "{{ state }}"
+  register: domain_state
+- win_reboot:
+  when: domain_state.reboot_required
+
+- debug: 
+    var: domain_state

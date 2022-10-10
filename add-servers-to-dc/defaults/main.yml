@@ -1,0 +1,6 @@
+dns_domain_name: ad.nicktailor.com
+computer_name: testmachine1
+domain_ou_path: "OU=Admin,DC=nicktailor,DC=local"
+domain_admin_user: adminuser@nicktailor.com
+state: domain
+
